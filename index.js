@@ -37,7 +37,7 @@ app.get("/e/get_video_info", (req,res,next) => {
                     fmt_stream_map += label[doc.label] + "|" + encodeURIComponent(doc.file.replace(new RegExp("redirector", "gi"), "r1---sn-o097zne7")) + ","
                 }
             })
-            data.fmt_stream_map = fmt_stream_map
+            data.fmt_stream_map = fmt_stream_map.slice(0, -1)
             let hasilurl = querystring.stringify(data)
             res.send(hasilurl)
         }
